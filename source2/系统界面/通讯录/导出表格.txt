@@ -1,0 +1,24 @@
+<script language="javascript"> 
+function exportExcel(atblData)
+{ 
+ if (typeof(EXPORT_OBJECT)!="object")
+   { 
+     document.body.insertAdjacentHTML("afterBegin","<OBJECT style='display:none' classid=clsid:0002E510-0000-0000-C000-000000000046 id=EXPORT_OBJECT></Object>"); 
+   } 
+ with (EXPORT_OBJECT){ 
+          DataType = "HTMLData"; 
+          HTMLData =atblData.outerHTML; 
+      try{ 
+           ActiveSheet.Export("C:\\sortTEL.xls",0); 
+  alert('导出EXCEL文档完毕'); 
+          } 
+  catch (e)
+  { 
+               alert('导出Excel表失败，请确定已安装Excel2000(或更高版本),并且没打开同名xls文件'); 
+  } 
+            } 
+ } 
+</script> 
+<center><input type="button" value="导出以上数据为Excel文档" onclick="exportExcel(tblData)"></center>
+
+

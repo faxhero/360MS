@@ -1,0 +1,33 @@
+
+<%@ page contentType="text/html;charset=GB2312"%>
+<html>
+<head>
+<title>personset</title>
+<style type='text/css'>
+body{
+	background:#ffffff;
+}
+a{
+	color:#000000;
+	text-decoration:none;
+}
+</style>
+</head>
+<body>
+
+<script language='JavaScript' src='person/person.js'></script>
+
+<script language="JavaScript">
+
+addtree('系统管理');
+addtree('-组织申请','组织管理.html',"_blank");
+
+addtree('-角色管理','juese.html',"_blank");
+addtree('-员工信息维护','维护-搜索.html',"_blank")
+
+
+
+createtree();
+</script>
+</body>
+</html>

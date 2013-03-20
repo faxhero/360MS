@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+</head>
+
+<body><script   language="JAVAscript">
+var haoma   
+  function   getRadio()   
+  {   
+      var   radios   =   document.frmtest1.radiobutton2;   
+      if   (radios)   
+      {   
+            var   len   =   radios.length;   
+            if   (len)   
+            {   
+  for   (var   i=0;   i   <   len;   i++)   
+  {   
+  if   (radios[i].checked)   
+  {   haoma=radios[i].value
+  alert("你选择了工号为 "   +   
+
+haoma+"的员工");   
+  break;   
+  }   
+  }   
+    
+  if   (i==len)   
+  alert("no   radio   is   checked");   
+            }   
+            else   
+            {   
+  if   (radios.checked)   
+        alert("checked   radio   has   a   value   of   "   +  
+
+ radios.value);   
+                  else   
+        alert("not   checked");   
+            }   
+      }   
+      else   
+          alert("No   radios");   
+    
+  }   
+  </script>
+
+<body>
+<form id="form1" name="frmtest1" method="post" action="">
+  <label></label><label></label>
+  <p align="center" class="STYLE1">搜索结果</p>
+  <p align="center" class="STYLE1"><label></label>&nbsp;</p>
+  <table width="853" height="622" border="1" align="center">
+    <tr>
+      <td width="299"><div align="center">姓名</div></td>
+      <td width="294"><div align="center">工号</div></td>
+      <td width="238"><label>
+      <div align="center">选择</div>
+      </label></td>
+    </tr>
+    <tr>
+      <td><div align="center">张三</div></td>
+      <td><div align="center">001</div></td>
+      <td><label>
+        <div align="center">
+          <input type="radio" name="radiobutton2" value="张三：001"onclick="alert('你选择了'+value)" />
+        </div>
+      </label></td>
+    </tr>
+    <tr>
+      <td><div align="center">李四</div></td>
+      <td><div align="center">002</div></td>
+      <td><label>
+        <div align="center">
+          <input type="radio" name="radiobutton2" value="李四：002"onclick="alert('你选择了'+value)" />
+        </div>
+      </label></td>
+    </tr>
+    <tr>
+      <td><div align="center">王五</div></td>
+      <td><div align="center">003</div></td>
+      <td><label>
+        <div align="center">
+          <input type="radio" name="radiobutton2" value="王五：003"onclick="alert('你选择了'+value)" />
+        </div>
+      </label></td>
+    </tr>
+    <tr>
+      <td><div align="center">张</div></td>
+      <td><div align="center">004</div></td>
+      <td><label>
+        <div align="center">
+          <input type="radio" name="radiobutton2" value="radiobutton"onclick="alert('你选择了'+value)" />
+        </div>
+      </label></td>
+    </tr>
+    <tr>
+      <td><div align="center">赵</div></td>
+      <td><div align="center">005</div></td>
+      <td><label>
+        <div align="center">
+          <input type="radio" name="radiobutton2" value="radiobutton"onclick="alert('你选择了'+value)" />
+        </div>
+      </label></td>
+    </tr>
+    <tr>
+      <td><div align="center">钱</div></td>
+      <td><div align="center">006</div></td>
+      <td><label>
+        <div align="center">
+          <input type="radio" name="radiobutton2" value="radiobutton" onclick="alert('你选择了'+value)"/>
+        </div>
+      </label></td>
+    </tr>
+    <tr>
+      <td><div align="center">孙</div></td>
+      <td><div align="center">007</div></td>
+      <td><label>
+        <div align="center">
+          <input type="radio" name="radiobutton2" value="radiobutton"onclick="alert('你选择了'+value)" />
+        </div>
+      </label></td>
+    </tr>
+    <tr>
+      <td><div align="center">李</div></td>
+      <td><div align="center">008</div></td>
+      <td><label>
+        <div align="center">
+          <input type="radio" name="radiobutton2" value="radiobutton"onclick="alert('你选择了'+value)" />
+        </div>
+      </label></td>
+    </tr>
+    <tr>
+      <td><div align="center"></div></td>
+      <td><div align="center"></div></td>
+      <td><label>
+        <div align="center">
+          <input type="radio" name="radiobutton2" value="radiobutton" onclick="alert('你选择了'+value)"/>
+        </div>
+      </label></td>
+    </tr>
+   
+  </table>
+  <p class="STYLE1">&nbsp;</p>
+</form> 
+
+<div align="left">
+  <p align="center">
+    <input name="button" type="button" onclick="getRadio()" value="人员确认" />
+</p>
+  <form id="form2" name="form2" method="post" action="">
+    <p class="STYLE1">修改为</p>
+    <p align="center" class="STYLE2">登录名：
+      <label>
+        <input type="text" name="textfield" />
+        </label>
+      密码：
+  <label>
+  <input type="password" name="textfield2" />
+  </label>
+    </p>
+    <p align="center" class="STYLE2">
+      <label>
+      <input type="submit" name="Submit" value="确认修改" />
+      </label>
+    </p>
+  </form>
+  <p class="STYLE1">&nbsp;</p>
+  <p>&nbsp;  </p>
+</div>
+
+</body>
+</html>

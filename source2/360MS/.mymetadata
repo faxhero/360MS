@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="360MS"
+  id="myeclipse.1363699513182"
+  context-root="/360ms"
+  j2ee-spec="5.0"
+  archive="360MS.war">
+  <attributes>
+    <attribute name="webrootdir" value="/WebRoot" />
+  </attributes>
+</project-module>
+

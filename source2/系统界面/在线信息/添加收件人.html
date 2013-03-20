@@ -1,0 +1,175 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<LINK href="admin_changepass_asp_files/admin.css" type=text/css rel=stylesheet>
+
+<META http-equiv=Expires content=-1000><LINK href="images/admin.css" 
+type=text/css rel=stylesheet>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>添加收件人</title>
+<style type="text/css">
+	#addTable{
+	}
+body,td,th {
+	color: #000000;
+}
+body {
+	background-color: #FFFFCC;
+}
+#Layer1 {
+	position:absolute;
+	left:1025px;
+	top:78px;
+	width:1px;
+	height:1px;
+	z-index:1;
+}
+#Layer2 {
+	position:absolute;
+	left:1171px;
+	top:79px;
+	width:156px;
+	height:133px;
+	z-index:1;
+}
+</style>
+
+<script language="javascript">
+	function check(form)
+	{
+	  
+		var test = confirm("确定要添加吗");
+		if(test)
+		{
+			alert("添加成功");
+		}
+		else
+		{
+			return false;
+		}
+	}
+	
+	function funAddEquipment(theform)
+	{
+		var equNumber=0;
+		var i; 
+		
+		
+		for(i=0;i<theform.newEquipmentSelect.length;i++)//在已选框增加选项
+		{
+			if(theform.newEquipmentSelect.options[i].selected==true)
+			{
+				if(theform.newEquipmentSelect.options[i].text!="")
+				{
+					
+					theform.hasEquipmentSelect.options[theform.hasEquipmentSelect.length]=new Option(theform.newEquipmentSelect.options[i].text);
+					theform.newEquipmentSelect.options[i]=new Option("");
+					break;
+				}
+			}
+		}
+		for(i=0;i<theform.newEquipmentSelect.length;i++)//在未选框减少选项
+		{
+			if(theform.newEquipmentSelect.options[i].text=="")
+			{
+				theform.newEquipmentSelect.options.remove(i);
+				i--;
+			}
+		}
+	}
+	function funDeleteEquipment(theform)
+	{
+		var i; 
+		for(i=0;i<theform.hasEquipmentSelect.length;i++)
+		{
+			if(theform.hasEquipmentSelect.options[i].selected==true)
+			{
+				if(theform.hasEquipmentSelect.options[i].text!="")
+				{
+					theform.newEquipmentSelect.options[theform.newEquipmentSelect.length]=new Option(theform.hasEquipmentSelect.options[i].text);
+					theform.hasEquipmentSelect.options[i]=new Option("");
+				}
+			}
+		}
+		for(i=0;i<theform.hasEquipmentSelect.length;i++)
+		{
+			if(theform.hasEquipmentSelect.options[i].text=="")
+			{
+				theform.hasEquipmentSelect.options.remove(i);
+				i--;
+			}
+		}
+	}
+</script>
+</head>
+
+<body>
+<div id="Layer2"><img src="www6Lucn0028.gif" width="100" height="100"></div>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" align=center border=0>
+  <TBODY>
+  <TR class=position>
+    <TD class=position>当前位置:添加收件人</TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=0 width="95%" align=center border=0>
+  <TBODY>
+  <TR height=30>
+    <TD></TD></TR></TBODY></TABLE>
+<form name="addMeetingRoom" onSubmit="return check(this)">
+<table class=editTable cellSpacing=1 cellPadding=0 width="100%" align=center border=0>
+<tr class=editHeaderTr>
+<td class=editHeaderTd colSpan=8>  请添加收件人：</td>
+</tr>   
+    
+  <tr>
+    <td width="8%" height="257" bgcolor="#FFFDF0"><div align="center">
+     
+      <p>&nbsp;            </p>
+    </div></td>
+    <td width="18%" bgcolor="#FFFFFF"> <select name="hasEquipmentSelect" style="width: 125px;"  size="22">
+    </select></td>
+    <td width="18%" bgcolor="#FFFFFF"><table width="100%"  border="0">
+      <tr>
+        <td bgcolor="#FFFDF0">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#FFFDF0"><input name="addEquipment" type="Button" value="添加" onClick="funAddEquipment(addMeetingRoom)"/></td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#FFFDF0"><input name="delEquipment" type="Button" value="删除" onClick="funDeleteEquipment(addMeetingRoom)"/></td>
+      </tr>
+      <tr>
+        <td bgcolor="#FFFDF0">&nbsp;</td>
+      </tr>
+    </table></td>
+    <td width="33%" bgcolor="#FFFFFF"><select name="newEquipmentSelect"  size="8" multiple style="width: 125px;">
+      <option value=0>1</option>
+      <option value=1>2</option>
+      <option value=2>3</option>
+      <option value=3>4</option>
+      <option value=4>5</option>
+      <option value=5>6</option>
+      <option value=6>7</option>
+      <option value=7>8</option>
+      <option value=8>9</option>
+      <option value=9>10</option>
+      <option value=0>11</option>
+      <option value=1>12</option>
+      <option value=2>13</option>
+      <option value=3>14</option>
+      <option value=4>15</option>
+    </select></td>
+    <td width="23%" bgcolor="#FFFFFF">&nbsp;</td>
+  </tr>
+</table>
+<table class=editTable cellSpacing=1 cellPadding=0 width="100%" align=center border=0>
+  <tr bgcolor="#ECF3FD">
+    <td width="26%" height="79">&nbsp;</td>
+    <td width="13%"><input type="submit" name="Submit" value="提交" ></td>
+    <td width="13%"><input type="reset" name="reset" value="重置"></td>
+    <td width="48%"><input type="button"  value="关闭" onClick="window.location.reload('写信.html')"></td>
+  </tr>
+</table>
+
+</form>
+</body>
+</html>
+

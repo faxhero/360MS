@@ -1,0 +1,37 @@
+
+<%@ page contentType="text/html;charset=GB2312"%>
+<html>
+<head>
+<title>personset</title>
+<style type='text/css'>
+body{
+	background:#ffffff;
+	background-color: #FFFFCC;
+}
+a{
+	color:#000000;
+	text-decoration:none;
+}
+.STYLE3 {
+	font-size: 50px;
+	font-style: italic;
+	font-weight: bold;
+	color: #0099CC;
+}
+.STYLE5 {font-size: 14px}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"></head>
+<body>
+
+<script language='JavaScript' src='set_reader/set_reader.js'></script>
+<span class="STYLE3">欢迎使用可读设置</span><img src="转球.gif" width="109" height="61" align="top"></span>
+<br><span class="STYLE4">机构设置</span></br>
+<script language="JavaScript">
+addtree('<span class="STYLE5">人力资源</span>','set_human.html',target="mainFrame")
+addtree('<span class="STYLE5">外贸</span>','set_waimao.html',target="mainFrame")
+addtree('<span class="STYLE5">公关</span>','set_waimao.html',target="mainFrame")
+addtree('<span class="STYLE5">财务</span>','set_waimao.html',target="mainFrame")
+createtree();
+</script>
+</body>
+</html>
