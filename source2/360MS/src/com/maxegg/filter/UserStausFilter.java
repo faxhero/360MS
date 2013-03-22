@@ -13,9 +13,6 @@ import javax.servlet.http.HttpSession;
 import javax.servlet.http.HttpServletRequest;
 
 public class UserStausFilter implements Filter {
-
-	private HttpServletRequest request;
-    private HttpServletResponse response;
 	
 	@Override
 	public void destroy() {
@@ -25,16 +22,19 @@ public class UserStausFilter implements Filter {
 	@Override
 	public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse,
 			FilterChain chain) throws IOException, ServletException {
-		request = (HttpServletRequest)servletRequest;
-		response = (HttpServletResponse)servletResponse;
-		HttpSession session = request.getSession();
+		HttpServletRequest request = (HttpServletRequest)servletRequest;
+		HttpServletResponse response = (HttpServletResponse)servletResponse;
+		HttpSession session = request.getSession();		
 		String userStaus = (String)session.getAttribute("userStaus");
-		if(userStaus==null||!userStaus.equals("active")){
-			response.sendRedirect("/login.jsp");
+		String url = request.getRequestURL().toString();
+		System.out.println(123123);		
+		if(!url.contains("/html/common")
+			 &&(userStaus==null||!userStaus.equals("active"))
+			&&!url.contains("login.do")){			
+			response.sendRedirect(request.getContextPath()+"/html/common/login.jsp");
 		}else{
 			chain.doFilter(request, response);
 		}
-		
 	}
 	
 	@Override

@@ -1,7 +1,7 @@
 --查询用户信息
 --##login start
-select name,age,address,gender,telephone,email from 360ms_employee 
-	where name='%s' and password='%s'
+select number,name,password from 360ms_employee 
+	where number='%s' and password='%s'
 --##login end
 
 --##update_user_pwd start

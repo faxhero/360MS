@@ -39,12 +39,9 @@ public class LoginDao extends BaseDao{
 			List<Item> users = md.getRow(0);
 			if(users!=null&&users.size()>=0){
 				// 通过标识信息比对手册查找，容易扩张,和上面查询的结果对应
-				ret.addRet("NAME", users.get(0).getStringColumn());
-				ret.addRet("AGE", users.get(1).getIntegerColumn());
-				ret.addRet("AS", users.get(2).getStringColumn());
-				ret.addRet("GR", users.get(3).getStringColumn());
-				ret.addRet("TEL", users.get(4).getStringColumn());
-				ret.addRet("EM", users.get(5).getStringColumn());
+				ret.addRet("NUMBER", users.get(0).getStringColumn());
+				ret.addRet("NAME", users.get(1).getStringColumn());
+				ret.addRet("PWD", users.get(2).getStringColumn());
 				return ret;
 			}
 			// 这个地方可以错误信息隐藏，具体需要错误信息比对手册

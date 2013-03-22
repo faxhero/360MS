@@ -21,7 +21,7 @@ public class MyDataSource {
 		try {
 			Context ctx = new InitialContext();
 			DataSource ds = (DataSource) ctx
-					.lookup("java:comp/env/jdbc/LiferayPool");
+					.lookup("java:comp/env/jdbc/mydata");
 			conn = ds.getConnection();
 		} catch (NamingException e) {
 			System.out.println("获取上下文资源失败！");
