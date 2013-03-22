@@ -186,3 +186,27 @@ CREATE TABLE IF NOT EXISTS `360ms_section` (
   KEY `department` (`department`),
   KEY `liferay_rel_id` (`liferay_rel_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='科室信息表' AUTO_INCREMENT=1 ;
+
+
+DROP TABLE IF EXISTS `360ms_employee`;
+CREATE TABLE IF NOT EXISTS `360ms_employee` (
+  `employee_id` smallint(5) unsigned NOT NULL AUTO_INCREMENT COMMENT '自增id',
+  `name` varchar(20) NOT NULL COMMENT '员工姓名',
+  `password` varchar(20) NOT NULL COMMENT '员工密码',
+  `number` varchar(50) NOT NULL COMMENT '员工工号',
+  `ename` varchar(20) DEFAULT NULL COMMENT '英文名',
+  `sex` enum('1','0') NOT NULL DEFAULT '1' COMMENT '性别 男性:1 女性:0',
+  `birthday` date DEFAULT NULL COMMENT '生日',
+  `remark` varchar(255) DEFAULT NULL COMMENT '员工备注',
+  `created` int(10) unsigned NOT NULL COMMENT '创建时间',
+  `modified` int(10) unsigned NOT NULL COMMENT '修改时间',
+  `creator` smallint(5) unsigned NOT NULL COMMENT '创建人',
+  `modifier` smallint(5) unsigned NOT NULL COMMENT '修改人',
+  PRIMARY KEY (`employee_id`),
+  UNIQUE KEY `number` (`number`),
+  KEY `name` (`name`),
+  KEY `created` (`created`),
+  KEY `modified` (`modified`),
+  KEY `creator` (`creator`),
+  KEY `modifier` (`modifier`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='员工信息表' AUTO_INCREMENT=1 ;
