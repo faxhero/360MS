@@ -37,7 +37,7 @@ public class LoginAction extends Action {
 		DealResult ret = bs.doService(input);
 		
 		// 登陆成功
-		if(ret.getErrorCode().equals("")){
+		if(ret.getErrorCode()==0){
 			request.setAttribute("name", ret.getRet("NUMBER"));
 			request.setAttribute("age", ret.getRet("NAME"));
 			request.setAttribute("gender", ret.getRet("PWD"));

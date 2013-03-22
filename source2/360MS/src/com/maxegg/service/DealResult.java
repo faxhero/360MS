@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.maxegg.exception.ExceptionMessage;
 import com.maxegg.util.Item;
 
 /*
@@ -13,7 +14,7 @@ public class DealResult implements Serializable {
 
 	private static final long serialVersionUID = -88000340003235847L;
 	private Map<String, Item> items = new HashMap<String, Item>();
-	private String errorCode = "";
+	private int errorCode = 0;
 	private String errorDesc = "";
 	private String dealId = "";
 
@@ -49,12 +50,13 @@ public class DealResult implements Serializable {
 		this.dealId = dealId;
 	}
 
-	public String getErrorCode() {
+	public int getErrorCode() {
 		return errorCode;
 	}
 
-	public void setErrorCode(String errorCode) {
+	public void setErrorCode(int errorCode) {
 		this.errorCode = errorCode;
+		this.errorDesc = ExceptionMessage.getErrorDesc(errorCode);
 	}
 
 	public String getErrorDesc() {
@@ -65,8 +67,4 @@ public class DealResult implements Serializable {
 		this.errorDesc = errorDesc;
 	}
 
-	public void setError(String errorCode, String errorDesc) {
-		setErrorCode(errorCode);
-		setErrorDesc(errorDesc);
-	}
 }

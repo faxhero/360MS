@@ -22,7 +22,7 @@ public class ActionDemo {
 		
 		// 处理   以后所有的实现都要调用
 		DealResult ret = bs.doService(input);
-		if(ret.getErrorCode().equals("")){
+		if(ret.getErrorCode()==0){
 			System.out.println("Update is Success!");
 		}else{
 			System.out.println("Update is fail,please update again!");
@@ -39,7 +39,7 @@ public class ActionDemo {
 		// 处理   以后所有的实现都要调用
 		DealResult ret = bs.doService(input);
 		
-		if(ret.getErrorCode().equals("")){
+		if(ret.getErrorCode()==0){
 			System.out.println("登陆成功！");
 			System.out.println("会员信息：");
 			System.out.println("\t姓名："+ret.getRet("NAME").getStringColumn());
@@ -65,7 +65,7 @@ public class ActionDemo {
 		// 处理   以后所有的实现都要调用BaseDao中的dealDao方法
 		DealResult ret = dao.dealDao(input);
 		
-		if(ret.getErrorCode().equals("")){
+		if(ret.getErrorCode()==0){
 			System.out.println("登陆成功！");
 			System.out.println("会员信息：");
 			System.out.println("\t姓名："+ret.getRet("NAME").getStringColumn());
