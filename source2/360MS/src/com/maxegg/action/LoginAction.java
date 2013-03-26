@@ -13,17 +13,14 @@ import com.maxegg.service.BaseService;
 import com.maxegg.service.DealInput;
 import com.maxegg.service.DealResult;
 
-// 用struts1.2 处理类
+
 public class LoginAction extends Action {
 	
 	@Override 
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
-		String lan = request.getParameter("language");
-		
-		System.out.println("language = " + lan);
-		
+		String lan = request.getParameter("language");		
 		BaseService bs = new BaseService();
 		DealInput input = new DealInput("LONGIN");
 		
@@ -36,13 +33,13 @@ public class LoginAction extends Action {
 		// 处理   以后所有的实现都要调用
 		DealResult ret = bs.doService(input);
 		
-		// 登陆成功
+		// 登陆成功,页面去保存信息
 		if(ret.getErrorCode()==0){
-			request.setAttribute("name", ret.getRet("NUMBER"));
-			request.setAttribute("age", ret.getRet("NAME"));
-			request.setAttribute("gender", ret.getRet("PWD"));
+			session.setAttribute("number", ret.getRet("NUMBER"));
+			session.setAttribute("name", ret.getRet("NAME"));
 			
-			session.setAttribute("userStaus", "active");
+			session.setAttribute("language", lan);       // 语言设置
+			session.setAttribute("userStaus", "active"); // 登陆标记
 			
 			return mapping.findForward("success");
 		}
