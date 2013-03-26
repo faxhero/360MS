@@ -36,15 +36,11 @@ public class LoginAction extends Action {
 		// 登陆成功,页面去保存信息
 		if(ret.getErrorCode()==0){
 			session.setAttribute("number", ret.getRet("NUMBER"));
-			session.setAttribute("name", ret.getRet("NAME"));
-			
+			session.setAttribute("name", ret.getRet("NAME"));			
 			session.setAttribute("language", lan);       // 语言设置
-			session.setAttribute("userStaus", "active"); // 登陆标记
-			
+			session.setAttribute("userStaus", "active"); // 登陆标记	
 			return mapping.findForward("success");
-		}
-		
+		}	
 		return mapping.findForward("error");
 	}
-
 }

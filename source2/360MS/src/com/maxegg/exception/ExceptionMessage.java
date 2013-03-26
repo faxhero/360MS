@@ -14,7 +14,7 @@ public class ExceptionMessage {
 
 	static {
 		try {
-			String sqlFile = ClassSql.class.getResource("exception.info")
+			String sqlFile = ExceptionMessage.class.getResource("exception.info")
 					.toString().substring(6);
 			File file = new File(sqlFile);
 			BufferedReader br = new BufferedReader(new FileReader(file));
