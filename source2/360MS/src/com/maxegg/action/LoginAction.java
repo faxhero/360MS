@@ -20,7 +20,8 @@ public class LoginAction extends Action {
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
-		String lan = request.getParameter("language");		
+		String lan = request.getParameter("language");	
+		if(lan == null) lan = "CN";
 		BaseService bs = new BaseService();
 		DealInput input = new DealInput("LONGIN");
 		

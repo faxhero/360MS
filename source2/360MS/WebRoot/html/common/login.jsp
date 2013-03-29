@@ -1,81 +1,91 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="init.jsp" %>
-
-<html>
+<html lang="en">
   <head>
+    <meta charset="utf-8">
+    <title>Sign in &middot; Twitter Bootstrap</title>
     <base href="<%=basePath%>">
-    
-    <title>My JSP 'login.jsp' starting page</title>
-    
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="cache-control" content="no-cache">
-	<meta http-equiv="expires" content="0">    
-	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="This is my page">
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
-	<script type="text/javascript">		
-		function $(id){
-		    return document.getElementById(id);
-		}
-		function autoResizepic(){
-			alert(jQuery('#fontzoom1'));
-		    var bodywidth = $('fontzoom1').style.height;
-		    bodywidth =document.body.scrollHeight;
-		    var picTarget=$('fontzoom1').getElementsByTagName('img');    		    
-		    if(picTarget.length>0){
-		        for(var i =0;i<picTarget.length;i++){ 
-	                if(picTarget[i].height>bodywidth)
-	                    {picTarget[i].height=bodywidth;}		
-	                if(picTarget[i].height<bodywidth)
-	                    {picTarget[i].height=bodywidth;}            
-		        }
-		    }
-		}
-		function login(){
-			
-			$("loginForm").action="login.do";
-			$("loginForm").submit();
-		}
-		function afterLoad(){
-		}
-		window.onresize=autoResizepic;
-		autoResizepic();	
-	</script>
-	<style>
-		input {
-   			height:25px;
-   			width:160px;
-   			font-size:medium;
-   			border-color:#ffffff;
- 		} 
-		*{margin:0;padding:0;}
-		#fontzoom1{width:100%;overflow:hidden;}
-	</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="css/daterangepicker.css" />
+    <style type="text/css">
+      body {
+        padding-top: 100px;
+        padding-bottom: 40px;
+        background-color: #f5f5f5;
+      }
+
+      .form-signin {
+        max-width: 300px;
+        padding: 19px 29px 29px;
+        margin: 0 auto 20px;
+        background-color: #fff;
+        border: 1px solid #e5e5e5;
+        -webkit-border-radius: 5px;
+           -moz-border-radius: 5px;
+                border-radius: 5px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+                box-shadow: 0 1px 2px rgba(0,0,0,.05);
+      }
+      .form-signin .form-signin-heading,
+      .form-signin .checkbox {
+        margin-bottom: 10px;
+      }
+      .form-signin input[type="text"],
+      .form-signin input[type="password"] {
+        font-size: 16px;
+        height: auto;
+        margin-bottom: 15px;
+        padding: 7px 9px;
+      }
+    </style>
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
   </head>
-  
-  <body onload="afterLoad()">
-	  <div id="fontzoom1"  align="center" style="width: 100%;height: 100%;position: absolute;z-index: 1">
-	  <img src="html/image/login.jpg"/>   
-	  </div>
-	  <div style="text-align:center;top:70%;left:45%;margin:-150px 0 0 -400px;width:1000px;height:100px;border:1px;position: absolute;z-index: 2">
-	  	<form name="loginForm" id="loginForm" action="login.do">
-		  	<span id="userBtnName" style="font-size: 20">工号:&nbsp;&nbsp;</span><input type="text" name="usernumber" id="usernumber"/><br/><br/>
-		  	<span id="pwdBtnName" style="font-size: 20">密码:&nbsp;&nbsp;</span><input type="password" name="passwd" id="passwd"/><br/><br/>
-		  	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		  	<span id="userBtnName" style="font-size: 20">语言:&nbsp;&nbsp;</span>
-		  	<select id="language" name="language">
-		  		<option value="CN" selected>中文</option>
-		  		<option value="EN">English</option>
-		  	</select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		  	<br>
-		  	<br>
-		  	<button id="loginBtnName" style="font-size: 20" onclick="login()">登录</button>
-		  	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		  	<button id="resetBtnName" style="font-size: 20">重置</button>
-	  	</form>	  	
-	  </div>
+
+  <body>
+    <div class="navbar navbar-inverse">
+      <div class="navbar-inner">
+        <div class="container-fluid">          
+          <h1 align="center"><font color="#ffffff">360°All Round Investigate Manager System</font></h1>         
+        </div>
+      </div>        
+    </div>
+    <div class="container">
+      <form class="form-signin" action="login.do">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <div class="input-append">
+          <input  name="dateInput" type="text"><i class="icon-calendar"></i>
+        </div>
+        <br>   
+        用户名：<input type="text" class="input-block-level" name="usernumber"  placeholder="Email address">
+        密码：<input type="password" class="input-block-level" name="passwd" placeholder="Password">        
+        <select name="language">
+        	<option value="cn">中文</option>
+        	<option value="en">English</option>
+        </select>        
+        <br/>
+        <button class="btn btn-large btn-primary" type="submit">Sign in</button>
+      </form>
+    </div> <!-- /container -->       
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script> 
+  	<script type="text/javascript" src="js/date.js"></script>
+  	<script type="text/javascript" src="js/daterangepicker.js"></script>
+  	<script type="text/javascript">
+  	$(document).ready(function() {
+  	   $("input[name='dateInput']").daterangepicker();
+  	});
+</script>
   </body>
 </html>
+

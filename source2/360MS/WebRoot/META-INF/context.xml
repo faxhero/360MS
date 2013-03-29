@@ -3,10 +3,10 @@
 <Resource
        name="jdbc/mydata"
        type="javax.sql.DataSource"
-       username="root"
-       password="1234"
+       username="360ms"
+       password="360ms"
        driverClassName="com.mysql.jdbc.Driver"
-       url="jdbc:mysql://localhost:3306/360ms"
+       url="jdbc:mysql://192.168.1.107:3306/360ms"
        maxIdle="2"
        maxWait="5000"       
        maxActive="20">

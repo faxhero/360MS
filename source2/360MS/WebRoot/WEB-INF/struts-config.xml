@@ -7,7 +7,7 @@
     	<action path="/login"
                 type="com.maxegg.action.LoginAction"                
                 scope="request">
-                <forward name="success" path="/index.jsp"></forward>
+                <forward name="success" path="/html/common/main.jsp"></forward>
                 <forward name="error" path="/error.jsp"></forward>
         </action>
     </action-mappings>

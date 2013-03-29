@@ -23,6 +23,7 @@ public class DealResult implements Serializable {
 	}
 	
 	public void addRet(String aName,Object obj){
+		if(obj == null) return;
 		Item item = new Item(obj);
 		items.put(aName, item);
 	}
@@ -31,7 +32,7 @@ public class DealResult implements Serializable {
 		if(items.containsKey(aName)){
 			return (Item)(items.get(aName));
 		}
-		return null;
+		return new Item("");
 	}
 
 	public Map<String, Item> getItems() {

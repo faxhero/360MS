@@ -26,6 +26,7 @@ public class DealInput implements Serializable{
 	}
 	
 	public void addBody(String aName,Object obj){
+		if(obj == null) return;
 		Item item = new Item(obj);
 		body.put(aName, item);
 	}
@@ -34,7 +35,7 @@ public class DealInput implements Serializable{
 		if(body.containsKey(name)){
 			return (Item)(body.get(name));
 		}
-		return null;
+		return new Item("");
 	}
 	
 	public void createId(){

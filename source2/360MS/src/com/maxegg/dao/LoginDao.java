@@ -37,6 +37,10 @@ public class LoginDao extends BaseDao {
 					passwd);
 			// 操作数据库,用JDBC
 			MyData md = mdb.execSql(sql);
+			if(md == null){
+				ret.setErrorCode(ExceptionIndex.DATABASE_ERROR);
+				return ret;
+			}
 			List<Item> users = md.getRow(0);
 			if (users != null && users.size() >= 0) {
 				// 通过标识信息比对手册查找，容易扩张,和上面查询的结果对应
