@@ -26,8 +26,7 @@ public class UserStausFilter implements Filter {
 		HttpServletResponse response = (HttpServletResponse)servletResponse;
 		HttpSession session = request.getSession();		
 		String userStaus = (String)session.getAttribute("userStaus");
-		String url = request.getRequestURL().toString();
-		System.out.println(123123);		
+		String url = request.getRequestURL().toString();	
 		if(!url.contains("/html/common")
 			 &&(userStaus==null||!userStaus.equals("active"))
 			&&!url.contains("login.do")){			

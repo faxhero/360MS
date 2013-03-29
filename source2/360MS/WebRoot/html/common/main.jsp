@@ -66,19 +66,19 @@
             <ul class="nav nav-list">
               <li class="nav-header">个人工作台</li>
               <li><a href="javascript:;" onclick="loadCenterHtml('html/workStation/myDraft.jsp')">我起草的任务</a></li>
-              <li><a href="#" onclick="loadCenterHtml('html/workStation/mySend.jsp')">我发起的任务</a></li>
-              <li><a href="#" onclick="loadCenterHtml('html/workStation/myWait.jsp')">待我处理的任务</a></li>
-              <li><a href="#" onclick="loadCenterHtml('html/workStation/myApproved.jsp')">经我处理的任务</a></li>             
+              <li><a href="javascript:;" onclick="loadCenterHtml('html/workStation/mySend.jsp')">我发起的任务</a></li>
+              <li><a href="javascript:;" onclick="loadCenterHtml('html/workStation/myWait.jsp')">待我处理的任务</a></li>
+              <li><a href="javascript:;" onclick="loadCenterHtml('html/workStation/myApproved.jsp')">经我处理的任务</a></li>             
               <li class="nav-header">模板管理</li>
-              <li><a href="#">360模板</a></li>
-              <li><a href="#">满意度模板</a></li>
-              <li><a href="#">自定义模板</a></li>              
+              <li><a href="javascript:;">360模板</a></li>
+              <li><a href="javascript:;">满意度模板</a></li>
+              <li><a href="javascript:;">自定义模板</a></li>              
               <li class="nav-header">数据字典</li>
-              <li><a href="#">类型1</a></li>
+              <li><a href="javascript:;">类型1</a></li>
               <li class="nav-header">系统管理</li>
-              <li><a href="#">用户管理</a></li>
+              <li><a href="javascript:;">用户管理</a></li>
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">组织管理 <b class="caret"></b></a>
+                <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">组织管理 <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                   <li><a href="#">公司</a></li>
                   <li><a href="#">部门</a></li>
@@ -96,7 +96,7 @@
           <div class="hero-unit">
             <h1>Hello!Welcome to 360 Manager System home</h1>
             <p>360MS的全称是360°All Round Investigate Manager System，是企业内部管理系统的重要组成部分，是通过信息化得方式来对企业内部的各个方面进行调查评估，同时也是员工进行自我评价的一种平台，系统包括满意度（匿名调查），员工评估（实名调查），以及自定义调查等多项功能，通过这种调查可以更好的了解企业的内部情况，更好的管理企业，更好团结整个企业团队</p>
-            <p><a href="#" class="btn btn-primary btn-large" onclick="loadCenterHtml('html/workStation/myWait.jsp')">处理待办 &raquo;</a></p>              
+            <p><a href="javascript:;" class="btn btn-primary btn-large" onclick="loadCenterHtml('html/workStation/myWait.jsp')">处理待办 &raquo;</a></p>              
           </div><!--/row-->
         </div><!--/span-->
       </div><!--/row-->      
