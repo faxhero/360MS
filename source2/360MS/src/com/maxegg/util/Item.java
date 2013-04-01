@@ -114,7 +114,7 @@ public class Item implements Serializable{
 		}
 		return new BigDecimal(0);
 	}
-
+	
 	public String toString() {
 		return this.getStringColumn();
 	}

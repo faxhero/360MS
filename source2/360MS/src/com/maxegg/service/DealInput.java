@@ -8,6 +8,7 @@ import java.util.Set;
 import java.util.UUID;
 
 import com.maxegg.util.Item;
+import com.maxegg.util.ItemTable;
 
 /*
  *  输入类：操作数据库的内容类
@@ -17,6 +18,7 @@ public class DealInput implements Serializable{
 	private static final long serialVersionUID = -4845409831231016586L;
 	private String head;
 	private Map<String, Item> body;
+	private Map<String, ItemTable> itemTable;
 	private String dealId;
 	
 	public DealInput(String head){
@@ -31,6 +33,15 @@ public class DealInput implements Serializable{
 		body.put(aName, item);
 	}
 	
+	
+	public Map<String, ItemTable> getItemTable() {
+		return itemTable;
+	}
+
+	public void setItemTable(Map<String, ItemTable> itemTable) {
+		this.itemTable = itemTable;
+	}
+
 	public Item getBodyItem(String name){
 		if(body.containsKey(name)){
 			return (Item)(body.get(name));

@@ -8,6 +8,6 @@ select number,name,password from 360ms_employee
 update 360ms_employee set password=? where name=?
 --##update_user_pwd end
 
---##add_user start
+--##list_user start
 insert into 360ms_employee() values(
---##add_user end
+--##list_user end

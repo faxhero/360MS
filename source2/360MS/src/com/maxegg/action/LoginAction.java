@@ -28,7 +28,7 @@ public class LoginAction extends Action {
 		HttpSession session = request.getSession();
 		
 		// 也可以通过beanForm来传递值
-		input.addBody("NAME", request.getParameter("usernumber"));
+		input.addBody("NUMBER", request.getParameter("usernumber"));
 		input.addBody("PWD", request.getParameter("passwd"));
 		
 		// 处理   以后所有的实现都要调用
@@ -36,8 +36,8 @@ public class LoginAction extends Action {
 		
 		// 登陆成功,页面去保存信息
 		if(ret.getErrorCode()==0){
-			session.setAttribute("number", ret.getRet("NUMBER"));
-			session.setAttribute("name", ret.getRet("NAME"));			
+			session.setAttribute("number", ret.getRet("NUMBER"));  // 员工工号
+			session.setAttribute("name", ret.getRet("NAME"));	   // 员工姓名	
 			session.setAttribute("language", lan);       // 语言设置
 			session.setAttribute("userStaus", "active"); // 登陆标记	
 			return mapping.findForward("success");

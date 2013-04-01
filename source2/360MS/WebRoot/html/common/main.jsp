@@ -76,7 +76,7 @@
               <li class="nav-header">数据字典</li>
               <li><a href="javascript:;">类型1</a></li>
               <li class="nav-header">系统管理</li>
-              <li><a href="javascript:;">用户管理</a></li>
+              <li><a href="javascript:;" onclick="loadCenterHtml('html/user/userManger.jsp')">用户管理</a></li>
               <li class="dropdown">
                 <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">组织管理 <b class="caret"></b></a>
                 <ul class="dropdown-menu">

@@ -31,10 +31,9 @@ public class LoginDao extends BaseDao {
 		ClassSql cs = new ClassSql();
 		// 用户登录处理方法
 		if (input.getHead().equals("LONGIN")) {
-			String name = input.getBodyItem("NAME").getStringColumn();
+			String name = input.getBodyItem("NUMBER").getStringColumn();
 			String passwd = input.getBodyItem("PWD").getStringColumn();
-			String sql = String.format(cs.getSql("user.sql", "login"), name,
-					passwd);
+			String sql = String.format(cs.getSql("user.sql", "login"), name,passwd);
 			// 操作数据库,用JDBC
 			MyData md = mdb.execSql(sql);
 			if(md == null){

@@ -1,6 +1,7 @@
 package com.maxegg.util;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
@@ -16,6 +17,22 @@ import javax.sql.DataSource;
 
 public class MyDataSource {
 
+	public static Connection getLocalConn() {
+		Connection conn = null;
+		String url = "jdbc:mysql://localhost:3306/maxeggflow?characterEncoding=utf-8";
+		String name = "root";
+		String pwd = "1234";
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			conn = DriverManager.getConnection(url, name, pwd);
+		} catch (Exception e) {
+			System.out.println("未知异常");
+			e.printStackTrace();
+		}
+		return conn;
+	}
+
+	
 	public static Connection getConnection() {
 		Connection conn = null;
 		try {
