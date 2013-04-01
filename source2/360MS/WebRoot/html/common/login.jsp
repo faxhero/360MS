@@ -58,7 +58,7 @@
       </div>        
     </div>
     <div class="container">
-      <form class="form-signin" action="login.do">
+      <form class="form-signin" action="login.do" method="post">
         <h2 class="form-signin-heading">Please sign in</h2>
         <div class="input-append">
           <input  name="dateInput" type="text"><i class="icon-calendar"></i>
