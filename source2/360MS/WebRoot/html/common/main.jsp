@@ -76,8 +76,22 @@
               <li class="nav-header">数据字典</li>
               <li><a href="javascript:;">类型1</a></li>
               <li class="nav-header">系统管理</li>
+<<<<<<< HEAD
               <li><a href="javascript:;">用户管理</a></li>
               <li><a href="javascript:;" onclick="loadCenterHtml('html/systemManage/organization.jsp')">组织管理</a></li>              
+=======
+              <li><a href="javascript:;" onclick="loadCenterHtml('html/user/userManger.jsp')">用户管理</a></li>
+              <li class="dropdown">
+                <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">组织管理 <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">公司</a></li>
+                  <li><a href="#">部门</a></li>
+                  <li><a href="#">科室</a></li>    
+                  <li class="nav-header">其他</li>
+                  <li><a href="#">单元</a></li>                 
+                </ul>
+              </li>
+>>>>>>> 7eb31fe7e4d9b3a2bfe6f3d0ebffde8678bdfcb9
               <li><a href="#">岗位管理</a></li>
               <li><a href="#">菜单管理</a></li>             
             </ul>
