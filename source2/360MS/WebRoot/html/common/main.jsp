@@ -5,13 +5,13 @@
 <html lang="en">
   <head>    
     <title>Bootstrap, from Twitter</title>
-    <base href="<%=basePath%>">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="nero">
+    <base href="<%=basePath%>"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content=""/>
+    <meta name="author" content="nero"/>
  
     <!-- Le styles -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet"/>
     <style type="text/css">
       body {
         padding-top: 120px;
@@ -31,7 +31,7 @@
         }
       }
     </style>
-    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.css" rel="stylesheet"/>
   </head>
   <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -44,7 +44,7 @@
               <li><a href="main.html">Home</a></li>              
             </ul>
              <form class="navbar-form pull-right">
-              <input class="search-query" type="text" placeholder="Search">             
+              <input class="search-query" type="text" placeholder="Search"/>             
               <button type="submit" class="btn"><i class="icon-search"></i>search</button>
             </form>
              <p class="navbar-text pull-right">
@@ -77,16 +77,7 @@
               <li><a href="javascript:;">类型1</a></li>
               <li class="nav-header">系统管理</li>
               <li><a href="javascript:;">用户管理</a></li>
-              <li class="dropdown">
-                <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">组织管理 <b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">公司</a></li>
-                  <li><a href="#">部门</a></li>
-                  <li><a href="#">科室</a></li>    
-                  <li class="nav-header">其他</li>
-                  <li><a href="#">单元</a></li>                 
-                </ul>
-              </li>
+              <li><a href="javascript:;" onclick="loadCenterHtml('html/systemManage/organization.jsp')">组织管理</a></li>              
               <li><a href="#">岗位管理</a></li>
               <li><a href="#">菜单管理</a></li>             
             </ul>
@@ -111,12 +102,12 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script type="text/javascript">
-      function loadCenterHtml(path){          
+      function loadCenterHtml(path){       	        
         $.ajax({
             type: "post",
             url: path,
             data: "",
-            success: function (html) {                   
+            success: function (html) {            	                        
                 $("#maincenter").html(html);
             }
         });        
