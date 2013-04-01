@@ -6,6 +6,7 @@ import java.util.Map;
 
 import com.maxegg.exception.ExceptionMessage;
 import com.maxegg.util.Item;
+import com.maxegg.util.ItemTable;
 
 /*
  *  输出类：操作数据库后结果类
@@ -14,6 +15,7 @@ public class DealResult implements Serializable {
 
 	private static final long serialVersionUID = -88000340003235847L;
 	private Map<String, Item> items = new HashMap<String, Item>();
+	private Map<String, ItemTable> itemTable = new HashMap<String, ItemTable>();
 	private int errorCode = 0;
 	private String errorDesc = "";
 	private String dealId = "";
@@ -22,6 +24,21 @@ public class DealResult implements Serializable {
 		this.dealId = dealId;
 	}
 	
+	
+	public void addItemTable(String itemName,ItemTable itemTable){
+		this.itemTable.put(itemName, itemTable);
+	}
+	
+	public Map<String, ItemTable> getItemTable() {
+		return itemTable;
+	}
+
+	public void setItemTable(Map<String, ItemTable> itemTable) {
+		this.itemTable = itemTable;
+	}
+
+
+
 	public void addRet(String aName,Object obj){
 		if(obj == null) return;
 		Item item = new Item(obj);

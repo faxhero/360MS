@@ -17,14 +17,18 @@ public class DealInput implements Serializable{
 	
 	private static final long serialVersionUID = -4845409831231016586L;
 	private String head;
-	private Map<String, Item> body;
-	private Map<String, ItemTable> itemTable;
+	private Map<String, Item> body = new HashMap<String, Item>();
+	private Map<String, ItemTable> itemTable = new HashMap<String, ItemTable>();
 	private String dealId;
 	
 	public DealInput(String head){
 		this.head = head;
 		body = new HashMap<String, Item>();
 		createId();
+	}
+	
+	public void addItemTable(String itemName,ItemTable itemTable){
+		this.itemTable.put(itemName, itemTable);
 	}
 	
 	public void addBody(String aName,Object obj){
